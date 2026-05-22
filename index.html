@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 
 </head>
+
 <body>
-
-  Mortgage Calculator
-  Clear All
-
-  Mortgage Amount
-
-  Mortgage Term
-
-  Interest Rate
-
-  Mortgage Type
-  Repayment
-  Interest Only
-
-  Calculate Repayments
-
-  <!-- Empty results start -->
-
-  Results shown here
-
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
-
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  Your results
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
+  <main class="container">
+    <form action="" class="calculator">
+      <section class="calculator__header">
+        <h1>Mortgage Calculator</h1>
+        <button type="reset">Clear All</button>
+      </section>
+      <label for="amount">Mortgage Amount</label>
+      <div>
+        <p>£</p>
+        <input type="number" id="amount" name="amount" required>
+      </div>
+      <section>
+        <label for="term">Mortgage Term</label>
+        <div>
+          <input type="number" id="term" name="term" required>
+          <p>years</p>
+        </div>
+        <label for="interest-rate">Interest Rate</label>
+        <div>
+          <input type="number" min="1" max="100" id="interest-rate" name="interes-rate" required>
+          <p>%</p>
+        </div>
+      </section>
+      <section>
+        <p>Mortgage Type</p>
+        <label for="repayment">
+          <input type="radio" id="repayment" name="type" value="repayment" required>
+          <span>Repayment</span>
+        </label>
+        <label for="interest-only">
+          <input type="radio" id="interest-only"  name="type" value="interest-only">
+          <span>Interest Only</span>
+        </label>
+      </section>
+      <button type="submit">Calculate Repayment</button>
+    </form>
+  </main>
 </body>
+
 </html>
