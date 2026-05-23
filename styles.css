@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+  --Lime: hsl(61, 70%, 52%);
+  --Red: hsl(4, 69%, 50%);
+  --White: hsl(0, 0%, 100%);
+  --Slate-100: hsl(202, 86%, 94%);
+  --Slate-300: hsl(203, 41%, 72%);
+  --Slate-500: hsl(200, 26%, 54%);
+  --Slate-700: hsl(200, 24%, 40%);
+  --Slate-900: hsl(202, 55%, 16%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body{
+    background-color: var(--Slate-100);
+}
+
+.container{
+    width: 100%;
+}
+
+.calculator{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--White);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.calculator__header{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.calculator__header h1{
+    font-size: 1.5rem;
+    color: var(--Slate-900);
+    padding-top: 20px;
+}
+
+.calculator__header button{
+    background: none;
+    border: none;
+    padding: none;
+    text-align: left;
+    color: var(--Slate-700);
+    font-size: 0.9rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.amount,
+.calculator__terms label,
+.mortgage__type p{
+    font-size: 0.9rem ;
+    color: var(--Slate-700);
+    font-weight: 600;
+}
+
+.amount__input,
+.terms__input,
+.mortgage__type-label{
+    display: flex;
+    border: 1px solid var(--Slate-700);
+    border-radius: 5px;
+    height: 40px;
+}
+
+.amount__input p,
+.terms__input p{
+    width: 15%;
+    height: 100%;
+    background-color: var(--Slate-100);
+    color: var(--Slate-900);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:  none;
+    border-radius: 5px 0px  0px 5px;
+}
+
+.terms__input p{
+    border-radius: 0px 5px  5px 0px;
+    width: 30%;
+}
+
+.terms__input-interest p{
+    width: 15%;
+}
+
+.amount__input input,
+.terms__input input{
+    width: 85%;
+    border:  none;
+    outline: none;
+    border-radius: 0px 5px  5px 0px;
+    padding-left: 10px;
+    color: var(--Slate-900);
+    font-weight: 600;
+}
+
+.terms__input input{
+    border-radius: 5px 0px  0px 5px;
+}
+
+.calculator__terms{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mortgage__type{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mortgage__type-label{
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.mortgage__type-label input{
+    transform: scale(1.1);
+}
+
+.mortgage__type-label span{
+    color: var(--Slate-900);
+    font-weight: 600;
+}
+
+.button__submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 280px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background-color: var(--Lime);
+    font-size: 1.1rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: var(--Slate-900);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.results{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    background-color: var(--Slate-900);
+}
+
+.results h2,
+.results p{
+    color: var(--White);
+    text-align: center;
+}
+
+.results p{
+    color: var(--Slate-300);
+    font-size: 0.9rem;
+}
