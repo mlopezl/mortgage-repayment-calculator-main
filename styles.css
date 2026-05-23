@@ -82,6 +82,13 @@ body{
     height: 40px;
 }
 
+.term,
+.interest{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .amount__input p,
 .terms__input p{
     width: 15%;
@@ -184,4 +191,55 @@ body{
 .results p{
     color: var(--Slate-300);
     font-size: 0.9rem;
+}
+
+@media(min-width: 596px){
+    html{
+        font-size: 14px;
+    }
+
+    body{
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+    }
+
+    .container{
+        display: flex;
+        max-width: 800px;
+        height: 500px;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    .calculator{
+        max-width: 50%;
+    }
+
+    .calculator__header{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .calculator__header button{
+        padding-top: 20px;
+    }
+
+    .results{
+        max-width: 50%;
+        display: grid;
+        place-content: center;
+        padding: 30px;
+        border-radius: 0px 0px 0px 30px;
+    }
+
+    .calculator__terms{
+        flex-direction: row;
+    }
+
+    .term,
+    .interest{
+        width: 50%;
+    }
 }
