@@ -65,6 +65,13 @@ body{
     text-decoration: underline;
 }
 
+.calculator__header button:hover,
+.calculator__header button:focus{
+   color: var(--Slate-900);
+   transition: all 300ms ease;
+   outline: none;
+}
+
 .amount,
 .calculator__terms label,
 .mortgage__type p{
@@ -77,9 +84,20 @@ body{
 .terms__input,
 .mortgage__type-label{
     display: flex;
-    border: 1px solid var(--Slate-700);
+    border: 1px solid var(--Slate-500);
     border-radius: 5px;
     height: 40px;
+}
+
+.amount__input:hover,
+.terms__input:hover{
+    border: 1px solid var(--Slate-900);
+    transition: all 300ms ease;
+}
+
+.mortgage__type-label:hover{
+    border:  1px solid var(--Lime);
+    transition: all 300ms ease;
 }
 
 .term,
@@ -154,6 +172,18 @@ body{
     font-weight: 600;
 }
 
+/* Chrome, Safari, Edge */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 .button__submit{
     display: flex;
     align-items: center;
@@ -170,6 +200,11 @@ body{
     color: var(--Slate-900);
     font-weight: 600;
     margin-bottom: 10px;
+}
+
+.button__submit:hover{
+   opacity: 90%;
+   transition: all 300ms ease;
 }
 
 .results{
@@ -228,8 +263,10 @@ body{
 
     .results{
         max-width: 50%;
-        display: grid;
-        place-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 30px;
         border-radius: 0px 0px 0px 30px;
     }
