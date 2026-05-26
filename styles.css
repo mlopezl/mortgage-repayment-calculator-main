@@ -2,6 +2,7 @@
 
 :root {
   --Lime: hsl(61, 70%, 52%);
+  --Lime-active: hsl(60, 72%, 93%);
   --Red: hsl(4, 69%, 50%);
   --White: hsl(0, 0%, 100%);
   --Slate-100: hsl(202, 86%, 94%);
@@ -95,6 +96,18 @@ body{
     transition: all 300ms ease;
 }
 
+.amount__input:has(input:focus){
+ border: 1px solid var(--Lime)
+}
+
+.terms__input:has(input:focus){
+ border: 1px solid var(--Slate-900);
+}
+
+.amount__input p:has(~ input:focus){
+ background-color: var(--Lime);
+}
+
 .mortgage__type-label:hover{
     border:  1px solid var(--Lime);
     transition: all 300ms ease;
@@ -145,6 +158,45 @@ body{
     border-radius: 5px 0px  0px 5px;
 }
 
+.radio-custom {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--Slate-500);
+  border-radius: 50%;
+  background: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.mortgage__type-label:has(.radio-custom:checked),
+.mortgage__type-label:has(.radio-custom:focus){
+    background-color: var(--Lime-active);
+    border: 1px solid var(--Lime);
+}
+
+.radio-custom:checked,
+.radio-custom:focus{
+    border: 1px solid var(--Lime);
+}
+
+.radio-custom:checked::before,
+.radio-custom:focus::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--Lime);
+  border-radius: 50%;
+  position: absolute;
+  top: 49%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-custom:focus{
+    outline: none;
+}
+
 .calculator__terms{
     display: flex;
     flex-direction: column;
@@ -172,7 +224,6 @@ body{
     font-weight: 600;
 }
 
-/* Chrome, Safari, Edge */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -202,7 +253,8 @@ input[type="number"] {
     margin-bottom: 10px;
 }
 
-.button__submit:hover{
+.button__submit:hover,
+.button__submit:focus{
    opacity: 90%;
    transition: all 300ms ease;
 }
