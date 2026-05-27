@@ -12,30 +12,33 @@
 
 <body>
   <main class="container">
-    <form action="" class="calculator">
+    <form action="" class="calculator" novalidate>
       <section class="calculator__header">
         <h1>Mortgage Calculator</h1>
         <button type="reset">Clear All</button>
       </section>
       <label class="amount" for="amount">Mortgage Amount</label>
       <div class="amount__input">
-        <p>£</p>
-        <input type="number" id="amount" name="amount" required>
+        <p id="amount-p">£</p>
+        <input type="number" class="form__input" id="amount" name="amount" required>
       </div>
+      <p id="error-amount" class="error-text hidden">This field is required</p>
       <section class="calculator__terms">
         <div class="term">
-        <label for="term">Mortgage Term</label>
-        <div class="terms__input">
-          <input type="number" id="term" name="term" required>
-          <p>years</p>
-        </div>
+          <label for="term">Mortgage Term</label>
+          <div class="terms__input">
+            <input type="number" class="form__input" id="term" name="term" required>
+            <p id="term-p">years</p>
+          </div>
+          <p id="error-term" class="error-text hidden">This field is required</p>
         </div>
         <div class="interest">
-        <label for="interest-rate">Interest Rate</label>
-        <div class="terms__input terms__input-interest">
-          <input type="number" min="1" max="100" id="interest-rate" name="interes-rate" required>
-          <p>%</p>
-        </div>
+          <label for="interest-rate">Interest Rate</label>
+          <div class="terms__input terms__input-interest">
+            <input type="number" class="form__input" min="1" max="100" id="interest-rate" name="interes-rate" required>
+            <p>%</p>
+          </div>
+          <p id="error-interest" class="error-text hidden">This field is required</p>
         </div>
       </section>
       <section class="mortgage__type">
@@ -45,23 +48,25 @@
           <span>Repayment</span>
         </label>
         <label for="interest-only" class="mortgage__type-label">
-          <input type="radio" class="radio-custom" id="interest-only"  name="type" value="interest-only">
+          <input type="radio" class="radio-custom" id="interest-only" name="type" value="interest-only">
           <span>Interest Only</span>
         </label>
+        <p id="error-type" class="error-text hidden">This field is required</p>
       </section>
       <button class="button__submit" type="submit">
         <img src="./assets/images/icon-calculator.svg" alt="Calculator icon">
         Calculate Repayment
       </button>
     </form>
-     <section class="results">
-        <img src="./assets/images/illustration-empty.svg" alt="Calculator image">
-        <h2>Results shown here</h2>
-        <p>
-          Complete the form and click "calculate repayments" to see what your monthly repayments would be.
-        </p>
-      </section>
+    <section class="results">
+      <img src="./assets/images/illustration-empty.svg" alt="Calculator image">
+      <h2>Results shown here</h2>
+      <p>
+        Complete the form and click "calculate repayments" to see what your monthly repayments would be.
+      </p>
+    </section>
   </main>
+  <script src="./app.js"></script>
 </body>
 
 </html>
