@@ -10,6 +10,7 @@
   --Slate-500: hsl(200, 26%, 54%);
   --Slate-700: hsl(200, 24%, 40%);
   --Slate-900: hsl(202, 55%, 16%);
+  --Slate-950: hsl(203, 55%, 11%);
 }
 
 * {
@@ -270,7 +271,8 @@ input[type="number"] {
   transition: all 300ms ease;
 }
 
-.results {
+.results,
+.calculated-results {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -280,15 +282,72 @@ input[type="number"] {
   background-color: var(--Slate-900);
 }
 
+.calculated-results{
+  padding: 30px 20px 60px 20px;
+}
+
 .results h2,
-.results p {
+.results p,
+.calculated-results h2,
+.calculated-results p {
   color: var(--White);
   text-align: center;
 }
 
-.results p {
+.calculated-results h2,
+.calculated-results p {
+  text-align: left;
+  align-self: flex-start;
+}
+
+.results p,
+.calculated-results p {
   color: var(--Slate-300);
   font-size: 0.9rem;
+  line-height: 25px;
+}
+
+
+.calculated__info{
+  width: 100%;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--Slate-950);
+  padding: 20px;
+  border-radius: 5px;
+  border-top: 3px solid var(--Lime);
+  margin-bottom: 55px;
+}
+
+.calculated__info h2{
+  font-size: 0.9rem;
+  color: var(--Slate-500);
+}
+
+.calculated__info article{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.calculated__info article:first-child{
+  box-shadow: 0px 1px 1px -1px var(--Slate-500);
+}
+
+.monthly-repayments p{
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--Lime);
+}
+
+.anual-repayments p{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--White);
 }
 
 .error-text {
@@ -298,10 +357,10 @@ input[type="number"] {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
-@media (min-width: 596px) {
+@media (min-width: 670px) {
   html {
     font-size: 14px;
   }
@@ -322,6 +381,8 @@ input[type="number"] {
 
   .calculator {
     max-width: 50%;
+    padding-right: 50px;
+    border-radius: 30px 0px 0px 30px;
   }
 
   .calculator__header {
@@ -334,8 +395,10 @@ input[type="number"] {
     padding-top: 20px;
   }
 
-  .results {
+  .results,
+  .calculated-results {
     max-width: 50%;
+    margin-left: -40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
